@@ -8,6 +8,7 @@ import os
 import argparse
 from pathlib import Path
 from datasets import load_dataset
+import datasets
 from huggingface_hub import login
 
 
@@ -43,27 +44,28 @@ def download_AudioMNIST(output_dir: str = "./data",
     try:
         # Note: AudioMNIST might require authentication
         # Uncomment the following line if you need to login
-        # token = os.getenv("HUGGINGFACE_TOKEN")
-        # if token:
-        #     login(token=token)
+        token = os.getenv("HUGGINGFACE_TOKEN")
+        if token:
+            login(token=token)
         
         print("\nDownloading AudioMNIST dataset...")
         print("Note: This is a large dataset and may take significant time.")
         print("The dataset will be cached for future use.")
+        datasets.config.DOWNLOADER_TIMEOUT = 300 
         
         # Load the dataset
         if split == "all":
             dataset = load_dataset(
                 "gilkeyio/AudioMNIST",
                 cache_dir=cache_dir,
-                num_proc=num_proc
+                num_proc=1
             )
         else:
             dataset = load_dataset(
                 "gilkeyio/AudioMNIST",
                 split=split,
                 cache_dir=cache_dir,
-                num_proc=num_proc
+                num_proc=1
             )
         
         # Save dataset info
