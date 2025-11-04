@@ -1,0 +1,107 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "audio_mnist",
+  "dataset_size": 1854632132,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/gilkeyio/AudioMNIST@b088f1a3d5f9516c05dec319c46431bcb3023819/data/train-00000-of-00003-4b74086e2a67d0c8.parquet": {
+      "num_bytes": 383183873,
+      "checksum": null
+    },
+    "hf://datasets/gilkeyio/AudioMNIST@b088f1a3d5f9516c05dec319c46431bcb3023819/data/train-00001-of-00003-ae7e1b90afb3df67.parquet": {
+      "num_bytes": 420016466,
+      "checksum": null
+    },
+    "hf://datasets/gilkeyio/AudioMNIST@b088f1a3d5f9516c05dec319c46431bcb3023819/data/train-00002-of-00003-05ec64f5b982f49b.parquet": {
+      "num_bytes": 397382821,
+      "checksum": null
+    },
+    "hf://datasets/gilkeyio/AudioMNIST@b088f1a3d5f9516c05dec319c46431bcb3023819/data/test-00000-of-00001-ca1411f00c6202d1.parquet": {
+      "num_bytes": 283097801,
+      "checksum": null
+    }
+  },
+  "download_size": 1483680961,
+  "features": {
+    "speaker_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "digit": {
+      "names": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "_type": "ClassLabel"
+    },
+    "gender": {
+      "names": [
+        "male",
+        "female"
+      ],
+      "_type": "ClassLabel"
+    },
+    "accent": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "age": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "native_speaker": {
+      "dtype": "bool",
+      "_type": "Value"
+    },
+    "origin": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "embedding": {
+      "feature": {
+        "dtype": "float32",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 3338313093,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 1493574282,
+      "num_examples": 24000,
+      "shard_lengths": [
+        8000,
+        7900,
+        100,
+        8000
+      ],
+      "dataset_name": "audio_mnist"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 361057850,
+      "num_examples": 6000,
+      "dataset_name": "audio_mnist"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
